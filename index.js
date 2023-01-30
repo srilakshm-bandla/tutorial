@@ -1,5 +1,14 @@
 const Notification = (props) => {
   //  Write your code here.
+  const { className,message, iconUrl } = props
+
+  const containerClassName = {`notification-container ${className}`}
+  return (
+    <div className={containerClassName}>
+      <img src={iconUrl} className="icon" />
+      <p className="message">{message}</p>
+    </div>
+  );
 };
 
 const element = (
@@ -8,33 +17,16 @@ const element = (
     <h1 className="heading">Notifications</h1>
     <div className="notification-container">
       <div className="information-container">
-        <img
-          className="icon"
-          src="https://assets.ccbp.in/frontend/react-js/primary-icon-img.png"
-        />
-        <p className="message">Information Message</p>
+        <Notification iconUrl="https://assets.ccbp.in/frontend/react-js/primary-icon-img.png" />
+        <Notification message="Information Message" />
       </div>
-
       <div className="success-container">
-        <img
-          className="icon"
-          src="https://assets.ccbp.in/frontend/react-js/success-icon-img.png"
-        />
-        <p className="message">Success Message</p>
+        <Notification iconUrl="https://assets.ccbp.in/frontend/react-js/success-icon-img.png" />
+        <Notification message="Success Message" />
       </div>
       <div className="warning-container">
-        <img
-          className="icon"
-          src="https://assets.ccbp.in/frontend/react-js/warning-icon-img.png"
-        />
-        <p className="message">Warning Message</p>
-      </div>
-      <div className="danger-container">
-        <img
-          className="icon"
-          src="https://assets.ccbp.in/frontend/react-js/danger-icon-img.png"
-        />
-        <p className="message">Danger Message</p>
+        <Notification iconUrl="https://assets.ccbp.in/frontend/react-js/warning-icon-img.png" />
+        <Notification message="Warning Message" />
       </div>
     </div>
   </div>
